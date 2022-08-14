@@ -6,14 +6,14 @@ const Header = props => {
   return (
     <View
       style={{
-        backgroundColor: props.color,
+        backgroundColor: '#540f44',
         height: 60,
         justifyContent: 'center',
         alignItems: 'center',
       }}>
       <Text
         style={{
-          color: props.headingColor,
+          color: 'white',
           fontWeight: 'bold',
           fontSize: 20,
         }}>
