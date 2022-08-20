@@ -18,13 +18,13 @@ const App = () => {
   // const [number, setNumber] = useState('');
   // const [alternatePhone, setAlternatePhone] = useState('');
 
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios
       .get('https://technomide.com/amber-api/api/getAllProduct?page=0')
       .then(result => {
-        setData(result.data.data);
+        setProducts(result.data.data);
       })
       .catch(error => {
         console.log(error, 'ERRRRRRRRRRRRRR');
@@ -32,12 +32,12 @@ const App = () => {
     // console.log('Mounting of component');
   }, []);
 
-  console.log(typeof data, 'I RAN');
+  console.log(typeof products, 'I RAN');
 
   return (
     <ScrollView style={{flex: 1}}>
       <Header heading="Products" />
-      {data.map(item => {
+      {products.map(item => {
         console.log(item, 'ITEMMMMMMMMMMMMMM=>>>>>>>>>>.');
         return (
           <View>
