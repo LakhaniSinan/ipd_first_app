@@ -12,7 +12,6 @@ import Header from '../components/Header';
 import axios from 'axios';
 
 const App = props => {
-  console.log(props, 'PROPSSS');
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -24,10 +23,8 @@ const App = props => {
       .catch(error => {
         console.log(error, 'ERRRRRRRRRRRRRR');
       });
-    // console.log('Mounting of component');
   }, []);
 
-  console.log(typeof products, 'I RAN');
 
   return (
     <ScrollView style={{flex: 1}}>

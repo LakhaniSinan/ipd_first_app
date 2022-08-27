@@ -7,6 +7,7 @@ const ProductDetail = props => {
 
   const {route} = props;
   const {coverImage, name, price} = route.params.data;
+  console.log(coverImage,"coverImagecoverImage");
   return (
     <View>
       <View
