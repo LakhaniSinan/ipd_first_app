@@ -1,9 +1,11 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
+import Header from '../components/Header';
 
 const Profile = props => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
+      <Header heading="Profile" />
       <TouchableOpacity
         onPress={() => props.navigation.navigate('Orders')}
         style={styles.containerStyle}>

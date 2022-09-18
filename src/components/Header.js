@@ -1,11 +1,14 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const Header = props => {
-  console.log('PROPSS=>>', props);
+const Header = ({heading, backButton}) => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
+        flexDirection: 'row',
         backgroundColor: '#540f44',
         height: 60,
         justifyContent: 'center',
@@ -17,8 +20,15 @@ const Header = props => {
           fontWeight: 'bold',
           fontSize: 20,
         }}>
-        {props.heading}
+        {heading}
       </Text>
+      {backButton && (
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{position: 'absolute', left: 10}}>
+          <AntDesign name="arrowleft" size={24} color="white" />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

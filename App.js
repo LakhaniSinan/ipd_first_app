@@ -9,6 +9,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Profile from './src/containers/profile';
 import MyOrders from './src/containers/MyOrders';
 import Helpline from './src/containers/Helpline';
+import Favourites from './src/containers/Favourite';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,7 +46,11 @@ function ProfileStack() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Helpline" component={Helpline} />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Helpline"
+        component={Helpline}
+      />
     </Stack.Navigator>
   );
 }
@@ -61,7 +66,16 @@ function MyStack() {
             headerShown: false,
           }}
         />
-        <Tab.Screen name="ProfileStack" component={ProfileStack} />
+        <Tab.Screen
+          options={{headerShown: false}}
+          name="Profile"
+          component={ProfileStack}
+        />
+        <Tab.Screen
+          name="Favourites"
+          component={Favourites}
+          options={{headerShown: false}}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
